@@ -338,7 +338,7 @@ export default function App() {
                 // collapsible
                 className="special-nav-title"
               >
-                3. XAI in the Real World
+                3. Nuances to Explainability
               </MDBScrollspyNavLink>
 
               {/* Case studies 2 subsections */}
@@ -363,7 +363,7 @@ export default function App() {
                     scrollElement={targetsElement && targetsElement[20]}
                   >
                     <div className="subSection-header">
-                      XAI and the Common Good
+                      Usability Testing Results
                     </div>
                   </MDBScrollspyNavLink>
 
@@ -378,7 +378,9 @@ export default function App() {
                         active={activeElement === 22}
                         scrollElement={targetsElement && targetsElement[21]}
                       >
-                        <div className="subSection-header">Responsible AI</div>
+                        <div className="subSection-header">
+                          How Understandable?
+                        </div>
                       </MDBScrollspyNavLink>
                     </MDBScrollspyNavItem>
 
@@ -388,7 +390,9 @@ export default function App() {
                         active={activeElement === 23}
                         scrollElement={targetsElement && targetsElement[22]}
                       >
-                        <div className="subSection-header">AI Principles</div>
+                        <div className="subSection-header">
+                          Biased Decision Making?
+                        </div>
                       </MDBScrollspyNavLink>
                     </MDBScrollspyNavItem>
                   </MDBScrollspyNavList>
@@ -469,7 +473,7 @@ export default function App() {
               </MDBScrollspySection>
 
               <MDBScrollspySection>
-                <div className="notions-collapsible">
+                <div className="accordions-collapsible">
                   <h3>3 Important Notions of XAI</h3>
                   <MDBAccordion alwaysOpen initialActive={"1"}>
                     <MDBAccordionItem
@@ -590,20 +594,279 @@ export default function App() {
 
           {/* 3. XAI in the real world content */}
           <MDBScrollspySection>
-            <BigSection title="3. XAI in the Real World"></BigSection>
+            <BigSection title="3. Nuances to Explainability"></BigSection>
 
             <MDBScrollspySection>
               {/* XAI Definition */}
-              <Section title="XAI and the Common Good"></Section>
+              <Section title="Issues and Challenges"></Section>
 
               <MDBScrollspySection>
-                {/* XAI Definition */}
-                <Subsection title="Responsible AI"></Subsection>
+                {/* Are XAI Techniques always understandable? Perhaps not */}
+                <div className="content-section">
+                  <h3>Are Explanations always understandable? Perhaps not</h3>
+                  <p>
+                    <b>
+                      Source:{" "}
+                      <a href="https://www.sciencedirect.com/science/article/pii/S1566253521002402">
+                        A novel model usability evaluation framework (MUsE) for
+                        explainable artificial intelligence
+                      </a>
+                    </b>
+                  </p>
+                  <p>
+                    This paper examines the UX effectiveness of the Local
+                    Interpretable Model-Agnostic Explanations (LIME) xAI
+                    framework, one of the most popular model agnostic frameworks
+                    found in the literature.
+                  </p>
+                  <p>
+                    As part of the study, the authors evaluate the
+                    understandability of the output produced by LIME via a
+                    usability study that involves participants who are not
+                    familiar with LIME. However, the authors found that the
+                    results produced by the framework are difficult to
+                    understand without documentation and/or explanation.
+                  </p>
+                  <p>Results from the usability interviews are as follows:</p>
+
+                  <div className="questions-collapsible">
+                    <h4>First Part : Just the most basic context</h4>
+                    <p>
+                      The interviewees were given a quick introduction into rain
+                      prediction, as well as a quick introduction into the
+                      applicable machine learning methods. Then, they were shown
+                      this explanation to the regression model:
+                    </p>
+                    <img
+                      src="https://ars.els-cdn.com/content/image/1-s2.0-S1566253521002402-gr3_lrg.jpg"
+                      alt="rain-prediction-LIME-explanation"
+                    ></img>
+                    <p>and then were asked questions about the graph.</p>
+                    <MDBAccordion alwaysOpen initialActive={"1"}>
+                      <MDBAccordionItem
+                        collapseId={"1"}
+                        headerTitle="What do you see in this graph?
+                        "
+                      >
+                        <strong>
+                          All interviewees expressed uncertainty about what the
+                          illustrations show.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          All started with identifying the three graphs and
+                          tried to make sense of the different numbers. Although
+                          a few participants struggled with the
+                          prediction-probabilities and the feature-value graph,
+                          every participant had difficulties interpreting the
+                          feature probabilities as the numbers did not seem to
+                          add up and there was too much information given in a
+                          badly structured way.
+                        </p>
+                      </MDBAccordionItem>
+                      <MDBAccordionItem
+                        collapseId={"2"}
+                        headerTitle="Which feature influences the prediction and how?
+                        "
+                      >
+                        <strong>
+                          Results varied depending on whether they had prior
+                          knowledge in machine learning.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          People without prior machine learning knowledge
+                          struggled to see the relation between the prediction
+                          probabilities and the classification, but those with
+                          prior knowledge in machine learning concluded, that
+                          there is a connection between the feature
+                          probabilities and the prediction probabilities graph.
+                          Five concluded correctly, that the second smaller
+                          numbers on the central graph are probabilities, as
+                          they are between 0 and 1 and influence the
+                          predictability.
+                        </p>
+                      </MDBAccordionItem>
+                      <MDBAccordionItem
+                        collapseId={"3"}
+                        headerTitle="Do you know why the model made this prediction?"
+                      >
+                        <strong>
+                          5 out of 12 interviewees (41.6%) answered correctly.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          Correct answer: the classification is determined by
+                          the numbers of the feature probabilities graph.
+                        </p>
+                      </MDBAccordionItem>
+                      <MDBAccordionItem
+                        collapseId={"4"}
+                        headerTitle="How well can you interpret the results of the prediction of the graph, on an increasing scale from 1-10?"
+                      >
+                        <strong>
+                          The interpretability of the LIME output was rated with
+                          an average of 4.16.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          The rating between the subgroups differed
+                          significantly, as the participants without prior
+                          knowledge gave an average of 3.16 and the participants
+                          with prior knowledge 5.16, respectively.
+                        </p>
+                      </MDBAccordionItem>
+                    </MDBAccordion>
+                  </div>
+
+                  <div className="questions-collapsible">
+                    <h4>
+                      Second Part : With an explanation of meaning of the
+                      explanation graph
+                    </h4>
+                    <p>
+                      The second section started with a short explanation of
+                      each graph of the LIME output as well as an explanation of
+                      the meaning of the r-squared value at the bottom of the
+                      output. The participants were subsequently shown another
+                      LIME output and were asked four more questions.
+                    </p>
+
+                    <MDBAccordion alwaysOpen initialActive={"1"}>
+                      <MDBAccordionItem
+                        collapseId={"1"}
+                        headerTitle="What do you see in the second graph?
+                        "
+                      >
+                        <strong>
+                          The answers improved significantly after the
+                          participants were given the explanation for each
+                          graph.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          7 participants understood the graphs correctly, but
+                          were still uncertain where the probabilities of the
+                          prediction probabilities graph came from. Four of the
+                          participants with a machine learning background and
+                          one without understood the framework after the
+                          explanation. Another six pointed out that the
+                          r-squared scores of both models were low, which
+                          resulted in concerns about the reliability of the
+                          prediction.
+                        </p>
+                      </MDBAccordionItem>
+                      <MDBAccordionItem
+                        collapseId={"2"}
+                        headerTitle="How well can you interpret the results of the prediction, on an increasing scale from 1-10?
+                        "
+                      >
+                        <strong>
+                          The interpretability of the graph after the
+                          explanation improved significantly, to an average of
+                          7.08.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          Participants with prior machine learning knowledge
+                          again rated it slightly higher with an average of
+                          7.91, compared to an average of 6.25 by the
+                          participants without prior knowledge.
+                        </p>
+                      </MDBAccordionItem>
+                      <MDBAccordionItem
+                        collapseId={"3"}
+                        headerTitle="What differences do you see between this one and the other graph?"
+                      >
+                        <strong>
+                          Participants noticed new things about the graphs.
+                        </strong>{" "}
+                        <p className="questions-answers">
+                          All participants noted the different prediction
+                          probabilities. Some participants pointed out that
+                          there is a big difference on how the features in the
+                          different outputs were rated and that the numbers of
+                          the feature value graph had changed.
+                        </p>
+                      </MDBAccordionItem>
+                      <MDBAccordionItem
+                        collapseId={"4"}
+                        headerTitle="Is there anything that stands out as strange or unusual?"
+                      >
+                        <p className="questions-answers">
+                          9 out of 12 participants stated that the central graph
+                          was not very interpretable and 4 mentioned that they
+                          found the choice of colors disturbing. Furthermore, 6
+                          interviewees suggested a legend, titles or a short
+                          explanation should be included in the output
+                          visualization to improve its interpretability.
+                        </p>
+                      </MDBAccordionItem>
+                    </MDBAccordion>
+                  </div>
+                </div>
               </MDBScrollspySection>
 
               <MDBScrollspySection>
-                {/* XAI Definition */}
-                <Subsection title="AI Principles"></Subsection>
+                {/* Biased Decision Making */}
+                <div className="content-section">
+                  <h3>
+                    How Humans Interpret Explanations : Cognitive Biases at
+                    Work?
+                  </h3>
+                  <p>
+                    <b>
+                      Source:{" "}
+                      <a href="https://osf.io/5jzmb/download/?format=pdf">
+                        Initial evidence for biased decision-making despite
+                        human-centered AI explanations.
+                      </a>
+                    </b>
+                  </p>
+                  <p>
+                    XAI has primarily focused on biased data and prejudice due
+                    to incorrect assumptions in the machine learning process
+                  </p>
+                  <p>
+                    However, the implications of potential biases and heuristics
+                    that humans exhibit when being presented an explanation by
+                    AI have received little attention in the current XAI debate.
+                  </p>
+                  <p>
+                    This paper examined the effects of human-centered
+                    explanations on trust behavior in a financial
+                    decision-making experiment and found that
+                    <ul>
+                      <li>
+                        AI explanations lead to higher trust behavior if
+                        participants were advised to decrease an initial price
+                        estimate.{" "}
+                      </li>
+                      <li>
+                        However, explanations had no effect if the AI
+                        recommended increase the initial price estimate.{" "}
+                      </li>
+                    </ul>
+                  </p>
+                  <p>
+                    The paper argues that these differences in trust behavior
+                    may be caused by cognitive biases and heuristics that people
+                    retain in their decision-making processes involving AI.
+                  </p>
+                  <p>
+                    It is possible that inherent biases and heuristics are so
+                    hard-wired that AI explanations are not convincing enough to
+                    disprove non-optimal human decision-making.
+                  </p>
+                  <p>
+                    If that is the case, AI may not help us to reach better
+                    decisions in circumstances where human intuition becomes too
+                    tempting for our judgment.
+                  </p>
+                  <p>
+                    The authors suggest that the XAI community should account
+                    for potential biases and heuristics in order to design for
+                    truly human-centered explanations that help optimizing
+                    decision-making. Biased decisions will not simply disappear
+                    because AI is involved, and while heuristics are useful in
+                    some situations, we may not want them to influence us in
+                    others.
+                  </p>
+                </div>
               </MDBScrollspySection>
             </MDBScrollspySection>
 

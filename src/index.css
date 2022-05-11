@@ -118,7 +118,7 @@ p {
   font-weight: 900;
 }
 
-.notions-collapsible {
+.accordions-collapsible {
   /* background-color: red; */
   /* padding: 0 30px 0 85px; */
   border-left: 0.25rem solid #b190ff;
@@ -128,8 +128,24 @@ p {
   margin-left: 50px;
 }
 
-.notions-collapsible h3 {
+.accordions-collapsible h3 {
   padding-bottom: 20px;
+}
+
+.questions-collapsible {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.questions-answers {
+  font-size: medium;
+}
+
+.questions-collapsible img {
+  width:100%;
+  padding: 10px 0 25px 0;
 }
 
 .accordion-button:not(.collapsed) {
