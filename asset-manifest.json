@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/xai-capstone-project/static/css/main.580c066f.css",
+    "main.js": "/xai-capstone-project/static/js/main.a38f98fa.js",
+    "static/js/787.946384d1.chunk.js": "/xai-capstone-project/static/js/787.946384d1.chunk.js",
+    "index.html": "/xai-capstone-project/index.html",
+    "main.580c066f.css.map": "/xai-capstone-project/static/css/main.580c066f.css.map",
+    "main.a38f98fa.js.map": "/xai-capstone-project/static/js/main.a38f98fa.js.map",
+    "787.946384d1.chunk.js.map": "/xai-capstone-project/static/js/787.946384d1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.580c066f.css",
+    "static/js/main.a38f98fa.js"
+  ]
+}
