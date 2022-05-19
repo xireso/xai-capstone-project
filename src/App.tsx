@@ -167,7 +167,7 @@ export default function App() {
                         active={activeElement === 8}
                         scrollElement={targetsElement && targetsElement[7]}
                       >
-                        <div className="subSection-header">Research Fields</div>
+                        <div className="subSection-header">Desiderata</div>
                       </MDBScrollspyNavLink>
                     </MDBScrollspyNavItem>
                   </MDBScrollspyNavList>
