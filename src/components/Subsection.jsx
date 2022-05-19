@@ -3,7 +3,7 @@ import React from "react";
 function Subsection(props) {
   return (
     <div>
-      <div className="space"></div>
+      {/* <div className="space"></div> */}
       <div className="content-subsection">
         <h3>{props.title}</h3>
         <p>

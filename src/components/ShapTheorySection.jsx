@@ -97,8 +97,7 @@ function ShapTheorySection() {
                 placement="bottom"
                 title={
                   <>
-                    Weighting of the contribution. Bigger subsets or smaller
-                    subsets are weighted more.
+                    Prediction from black box model when given a simplified subset.
                   </>
                 }
               >
@@ -117,8 +116,7 @@ function ShapTheorySection() {
                 placement="bottom"
                 title={
                   <>
-                    Weighting of the contribution. Bigger subsets or smaller
-                    subsets are weighted more.
+                    Prediction from black box model when given a simplified subset EXCLUDING the feature i we are interesting in calculating the Shapley value for.
                   </>
                 }
               >

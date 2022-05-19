@@ -6,27 +6,13 @@ import {
   MDBScrollspySection,
   MDBScrollspyNavLink,
   MDBScrollspyNavList,
-  MDBTabs,
-  MDBTabsItem,
-  MDBTabsLink,
-  MDBTabsContent,
-  MDBTabsPane,
-  MDBRow,
-  MDBCol,
-  MDBContainer,
   MDBAccordion,
   MDBAccordionItem,
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBBtn,
 } from "mdb-react-ui-kit";
 import Section from "./components/Section";
 import Subsection from "./components/Subsection";
 import BigSection from "./components/BigSection";
 import ShapTheorySection from "./components/ShapTheorySection";
-import XAIDefinition from "./components/Sect1_XAIDefinition";
 import Sect1_XAIDefinition from "./components/Sect1_XAIDefinition";
 
 export default function App() {
@@ -247,8 +233,7 @@ export default function App() {
                   activeElement === 15 ||
                   activeElement === 16 ||
                   activeElement === 17 ||
-                  activeElement === 18 ||
-                  activeElement === 19
+                  activeElement === 18
                 }
                 // collapsible
                 className="flex-column ps-3"
@@ -260,7 +245,7 @@ export default function App() {
                     scrollElement={targetsElement && targetsElement[13]}
                   >
                     <div className="subSection-header">
-                      Notable Technique - LIME
+                      Notable Technique - SHAP
                     </div>
                   </MDBScrollspyNavLink>
 
@@ -314,27 +299,17 @@ export default function App() {
                         <div className="subSection-header">Census</div>
                       </MDBScrollspyNavLink>
                     </MDBScrollspyNavItem>
-
-                    <MDBScrollspyNavItem>
-                      <MDBScrollspyNavLink
-                        className="navSubsection"
-                        active={activeElement === 19}
-                        scrollElement={targetsElement && targetsElement[18]}
-                      >
-                        <div className="subSection-header">MNIST</div>
-                      </MDBScrollspyNavLink>
-                    </MDBScrollspyNavItem>
                   </MDBScrollspyNavList>
                 </MDBScrollspyNavItem>
               </MDBScrollspyNavList>
             </MDBScrollspyNavItem>
 
-            {/* 3. XAI in the Real World */}
+            {/* 3. Nuances to Explainability */}
             <MDBScrollspyNavItem className="navItem">
-              {/* XAI in the real world */}
+              {/* Nuances to Explainability */}
               <MDBScrollspyNavLink
-                active={activeElement === 20}
-                scrollElement={targetsElement && targetsElement[19]}
+                active={activeElement === 19}
+                scrollElement={targetsElement && targetsElement[18]}
                 // collapsible
                 className="special-nav-title"
               >
@@ -344,14 +319,14 @@ export default function App() {
               {/* Case studies 2 subsections */}
               <MDBScrollspyNavList
                 active={
+                  activeElement === 19 ||
                   activeElement === 20 ||
                   activeElement === 21 ||
                   activeElement === 22 ||
                   activeElement === 23 ||
                   activeElement === 24 ||
                   activeElement === 25 ||
-                  activeElement === 26 ||
-                  activeElement === 27
+                  activeElement === 26
                 }
                 // collapsible
                 className="flex-column ps-3"
@@ -359,7 +334,7 @@ export default function App() {
                 <MDBScrollspyNavItem>
                   <MDBScrollspyNavLink
                     className="navSubsection"
-                    active={activeElement === 21}
+                    active={activeElement === 20}
                     scrollElement={targetsElement && targetsElement[20]}
                   >
                     <div className="subSection-header">
@@ -368,10 +343,22 @@ export default function App() {
                   </MDBScrollspyNavLink>
 
                   <MDBScrollspyNavList
-                    active={activeElement === 22}
+                    active={activeElement === 21}
                     // collapsible
                     className="flex-column ps-3"
                   >
+                    <MDBScrollspyNavItem>
+                      <MDBScrollspyNavLink
+                        className="navSubsection"
+                        active={activeElement === 21}
+                        scrollElement={targetsElement && targetsElement[20]}
+                      >
+                        <div className="subSection-header">
+                          How Understandable?
+                        </div>
+                      </MDBScrollspyNavLink>
+                    </MDBScrollspyNavItem>
+
                     <MDBScrollspyNavItem>
                       <MDBScrollspyNavLink
                         className="navSubsection"
@@ -379,7 +366,7 @@ export default function App() {
                         scrollElement={targetsElement && targetsElement[21]}
                       >
                         <div className="subSection-header">
-                          How Understandable?
+                          Biased Decision Making?
                         </div>
                       </MDBScrollspyNavLink>
                     </MDBScrollspyNavItem>
@@ -391,7 +378,7 @@ export default function App() {
                         scrollElement={targetsElement && targetsElement[22]}
                       >
                         <div className="subSection-header">
-                          Biased Decision Making?
+                          Explanatory Pluralism
                         </div>
                       </MDBScrollspyNavLink>
                     </MDBScrollspyNavItem>
@@ -404,7 +391,7 @@ export default function App() {
                     active={activeElement === 24}
                     scrollElement={targetsElement && targetsElement[23]}
                   >
-                    <div className="subSection-header">On Explainability</div>
+                    <div className="subSection-header">Challenges With XAI</div>
                   </MDBScrollspyNavLink>
 
                   <MDBScrollspyNavList
@@ -412,17 +399,7 @@ export default function App() {
                     // collapsible
                     className="flex-column ps-3"
                   >
-                    <MDBScrollspyNavItem>
-                      <MDBScrollspyNavLink
-                        className="navSubsection"
-                        active={activeElement === 25}
-                        scrollElement={targetsElement && targetsElement[24]}
-                      >
-                        <div className="subSection-header">How to Evaluate</div>
-                      </MDBScrollspyNavLink>
-                    </MDBScrollspyNavItem>
-
-                    <MDBScrollspyNavItem>
+                    {/* <MDBScrollspyNavItem>
                       <MDBScrollspyNavLink
                         className="navSubsection"
                         active={activeElement === 26}
@@ -442,8 +419,18 @@ export default function App() {
                       >
                         <div className="subSection-header">WTF</div>
                       </MDBScrollspyNavLink>
-                    </MDBScrollspyNavItem>
+                    </MDBScrollspyNavItem> */}
                   </MDBScrollspyNavList>
+                </MDBScrollspyNavItem>
+
+                <MDBScrollspyNavItem>
+                  <MDBScrollspyNavLink
+                    className="navSubsection"
+                    active={activeElement === 25}
+                    scrollElement={targetsElement && targetsElement[24]}
+                  >
+                    <div className="subSection-header">Evaluation Methods</div>
+                  </MDBScrollspyNavLink>
                 </MDBScrollspyNavItem>
               </MDBScrollspyNavList>
             </MDBScrollspyNavItem>
@@ -461,14 +448,44 @@ export default function App() {
           {/* 1. what is XAI content */}
           <MDBScrollspySection>
             {/* what is XAI? */}
-            <BigSection title="1. What is XAI?"></BigSection>
+            <div className="content-big-section">
+              <h1>1. What is XAI?</h1>
+              <p>
+                XAI stands for eXplainable Artificial Intelligence, and it is a
+                fastly expanding field with great potential impact on our
+                society.
+              </p>
+              <p>
+                AI methods are achieving unprecedented levels of performance
+                when learning to solve increasingly complex computational tasks,
+                making them a big driver for the future development of the human
+                society.
+              </p>
+              <p>
+                In the recent decade, there has been a rise of decision systems
+                such as Deep Neural Networks that are opaque and considered
+                "black box" models. When decisions derived from such systems
+                ultimately affect humans’ lives (like in medicine, law,
+                policing, or defense), there is an emerging need for
+                understanding how such decisions are made by AI The danger is
+                when we use decisions made by AI that are not justifiable,
+                legitimate, or do not allow us to see detailed explanations of
+                why.
+              </p>
+              <p>
+                Further, there is a gap between the research community and
+                business sectors - lack of adoption of some AI solutions in
+                highly regulated industries like finance, security, and health,
+                because people are reluctant to adopt techniques that are not
+                directly interpretable and trustworthy.
+              </p>
+            </div>
 
             <MDBScrollspySection>
               {/* defs and concepts */}
               <h3 className="content-section">Definitions and Concepts</h3>
 
               <MDBScrollspySection>
-                {/* XAI Definition */}
                 <Sect1_XAIDefinition></Sect1_XAIDefinition>
               </MDBScrollspySection>
 
@@ -480,36 +497,31 @@ export default function App() {
                       collapseId={"1"}
                       headerTitle="Opaque System"
                     >
-                      <strong>This is the first item's accordion body.</strong>{" "}
-                      <p>some more text.</p>
+                      See slide 2 in this{" "}
+                      <a href="https://docs.google.com/presentation/d/1y5kUUEMTiuC13qZKVHLvzrKB4O6O5tBDbo46iVQS_so/edit#slide=id.p">
+                        Google Slides
+                      </a>{" "}
+                      for what this would look like.
                     </MDBAccordionItem>
                     <MDBAccordionItem
                       collapseId={"2"}
                       headerTitle="Transparent System"
                     >
-                      <strong>This is the second item's accordion body.</strong>{" "}
-                      It is hidden by default, until the collapse plugin adds
-                      the appropriate classes that we use to style each element.
-                      These classes control the overall appearance, as well as
-                      the showing and hiding via CSS transitions. You can modify
-                      any of this with custom CSS or overriding our default
-                      variables. It's also worth noting that just about any HTML
-                      can go within the <code>.accordion-body</code>, though the
-                      transition does limit overflow.
+                      See slide 3 in this{" "}
+                      <a href="https://docs.google.com/presentation/d/1y5kUUEMTiuC13qZKVHLvzrKB4O6O5tBDbo46iVQS_so/edit#slide=id.g129b6b68e88_0_16">
+                        Google Slides
+                      </a>{" "}
+                      for what this would look like.
                     </MDBAccordionItem>
                     <MDBAccordionItem
                       collapseId={"3"}
                       headerTitle="Explainable System"
                     >
-                      <strong>This is the third item's accordion body.</strong>{" "}
-                      It is hidden by default, until the collapse plugin adds
-                      the appropriate classes that we use to style each element.
-                      These classes control the overall appearance, as well as
-                      the showing and hiding via CSS transitions. You can modify
-                      any of this with custom CSS or overriding our default
-                      variables. It's also worth noting that just about any HTML
-                      can go within the <code>.accordion-body</code>, though the
-                      transition does limit overflow.
+                      See slide 4 in this{" "}
+                      <a href="https://docs.google.com/presentation/d/1y5kUUEMTiuC13qZKVHLvzrKB4O6O5tBDbo46iVQS_so/edit#slide=id.g129b6b68e88_0_32">
+                        Google Slides
+                      </a>{" "}
+                      for what this would look like.
                     </MDBAccordionItem>
                   </MDBAccordion>
                 </div>
@@ -521,7 +533,6 @@ export default function App() {
               <Section title="Perspectives of XAI"></Section>
 
               <MDBScrollspySection>
-                {/* XAI Definition */}
                 <Subsection title="Goals"></Subsection>
               </MDBScrollspySection>
 
@@ -532,7 +543,7 @@ export default function App() {
 
               <MDBScrollspySection>
                 {/* 3 Notions */}
-                <Subsection title="Research Fields"></Subsection>
+                <Subsection title="Desiderata"></Subsection>
               </MDBScrollspySection>
             </MDBScrollspySection>
 
@@ -577,17 +588,10 @@ export default function App() {
             </MDBScrollspySection>
 
             <MDBScrollspySection>
-              {/* XAI Definition */}
               <Section title="Data Biography"></Section>
 
               <MDBScrollspySection>
-                {/* XAI Definition */}
                 <Subsection title="Census"></Subsection>
-              </MDBScrollspySection>
-
-              <MDBScrollspySection>
-                {/* XAI Definition */}
-                <Subsection title="MNIST"></Subsection>
               </MDBScrollspySection>
             </MDBScrollspySection>
           </MDBScrollspySection>
@@ -597,12 +601,11 @@ export default function App() {
             <BigSection title="3. Nuances to Explainability"></BigSection>
 
             <MDBScrollspySection>
-              {/* XAI Definition */}
-              <Section title="Issues and Challenges"></Section>
+              <Section title="Usability Testing Results"></Section>
 
               <MDBScrollspySection>
                 {/* Are XAI Techniques always understandable? Perhaps not */}
-                <div className="content-section">
+                <div className="content-subsection">
                   <h3>Are Explanations always understandable? Perhaps not</h3>
                   <p>
                     <b>
@@ -803,7 +806,7 @@ export default function App() {
 
               <MDBScrollspySection>
                 {/* Biased Decision Making */}
-                <div className="content-section">
+                <div className="content-subsection">
                   <h3>
                     How Humans Interpret Explanations : Cognitive Biases at
                     Work?
@@ -868,25 +871,244 @@ export default function App() {
                   </p>
                 </div>
               </MDBScrollspySection>
+
+              <MDBScrollspySection>
+                {/* Biased Decision Making */}
+                <div className="content-subsection">
+                  <h3>Explanatory Pluralism</h3>
+                  <p>
+                    <b>
+                      Source:{" "}
+                      <a href="https://www.dropbox.com/s/tar08j70odse0io/HCXAI2021_paper_1.pdf?dl=0">
+                        System Explanations: A Cautionary Tale
+                      </a>
+                    </b>
+                  </p>
+                  <p>
+                    This paper conducted a pilot study that asked 6 different
+                    judges to rate how comprehensible a set of 100
+                    justifications produced by a textural entailment system was
+                    on a five-point scale.
+                  </p>
+                  <p>
+                    However, the results showed the judges had very different
+                    ideas of what constitutes a good explanation.
+                  </p>
+                  <p>
+                    Some judges preferred explanations in precise logical
+                    notation that other judges hated, which seemed to have
+                    varied with the amount of mathematical training in a judge’s
+                    background. Despite the divide on logical notation, all
+                    judges valued conciseness and wanted the explanations to
+                    focus on the specifics.
+                  </p>
+                  <p>
+                    More than half of the explanations received both one rating
+                    of ‘Very Poor’ or ‘Poor’ and one rating of ‘Good’ or ‘Very
+                    Good’; and in 32 cases out of the 100 cases, the same
+                    explanation received all five possible ratings from ‘Very
+                    Poor’ through ‘Very Good’.
+                  </p>
+                  <p>
+                    The paper discusses that the underlying problem is that
+                    eventual end users still have different opinions as to what
+                    constitutes an effective explanation, so this is still an
+                    area that requires further research.
+                  </p>
+
+                  <hr></hr>
+
+                  <p>
+                    <b>
+                      Source:{" "}
+                      <a href="https://www.dropbox.com/s/3um8xihmsrk7qbk/HCXAI2021_paper_18.pdf?dl=0">
+                        AI Explainability: Why One Explanation Cannot Fit All
+                      </a>
+                    </b>
+                  </p>
+                  <p>
+                    This paper emphasizes that the evaluation of the usefulness
+                    of the explainability method cannot be detached from the
+                    specific context and its specific intended use cases in that
+                    context. The explainability method that is perceived as
+                    useful by the same audience in one context for one task
+                    might be perceived as not useful in another, even if the AI
+                    model and the explanation used are essentially the same.
+                  </p>
+                  <p>
+                    The purpose of explainability in AI models can vary greatly
+                    based on the audience. For example, the purpose of having
+                    explainability for the users of the model is to trust the
+                    model, while users affected by model decisions could benefit
+                    from explainability by understanding their situation better,
+                    and verifying whether the decisions were fair. Since these
+                    audiences have different goals, this means that an
+                    explanation that may be considered to be good by one type of
+                    audience but not another.
+                  </p>
+                </div>
+              </MDBScrollspySection>
             </MDBScrollspySection>
 
             <MDBScrollspySection>
-              {/* XAI Definition */}
-              <Section title="Explainability"></Section>
+              <div className="content-section">
+                <h3>Challenges with XAI</h3>
+                <p>
+                  <b>
+                    Source:{" "}
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0740624X21001027?pes=vor">
+                      The perils and pitfalls of explainable AI: Strategies for
+                      explaining algorithmic decision-making
+                    </a>
+                  </b>
+                </p>
+                <p>
+                  <strong>1. Lack of expertise</strong>
+                  <ul>
+                    <li>
+                      Most persons will lack the expertise to understand the
+                      explanation and assess the fairness of the decision.
+                    </li>
+                  </ul>
+
+                  <strong>2. Lack of expertise</strong>
+                  <ul>
+                    <li>
+                      Experts explaining algorithms also make biased and
+                      inherently disputable choices. Tools and instruments can
+                      be used to abstract and explain decisions, but this
+                      results in a further deviation of how the actual AI-based
+                      decision is taken, and the simplification might be
+                      contestable. Further, in the process of deriving the
+                      conceptual ‘translation’ that a broader audience can
+                      understand, the translator also makes inherently
+                      disputable (biased) choices. For instance, political
+                      preferences might be reflected by an explanation.
+                    </li>
+                  </ul>
+
+                  <strong>3. Dynamics of data and decisions</strong>
+                  <ul>
+                    <li>
+                      Data and decisions change over time, and therefore
+                      explanations change.
+                    </li>
+                  </ul>
+
+                  <strong>4. Interference of algorithms</strong>
+                  <ul>
+                    <li>
+                      Often there is a whole chain of activities to collect and
+                      process data from various types of sources, and many,
+                      often different kinds of algorithms are used.
+                    </li>
+                  </ul>
+
+                  <strong>5. Context-dependency</strong>
+                  <ul>
+                    <li>
+                      Algorithms cannot be explained at a general level, as
+                      outcomes might be different per individual.
+                    </li>
+                  </ul>
+
+                  <strong>
+                    6. Ill-structured nature of the problems addressed
+                  </strong>
+                  <ul>
+                    <li>
+                      Some problems are ill-structured, are ambiguous by nature
+                      and can be solved in different ways. Algorithms provide
+                      one answer that is contestable and changes over time.
+                    </li>
+                  </ul>
+
+                  <strong>7. Causality is not used for making decisions</strong>
+                  <ul>
+                    <li>
+                      If the causality is explained between inputs and outputs,
+                      this does not mean that the algorithm uses that causality
+                      to arrive at a decision. Furthermore, the explanation of
+                      causality might change over time.
+                    </li>
+                  </ul>
+                </p>
+              </div>
 
               <MDBScrollspySection>
-                {/* XAI Definition */}
-                <Subsection title="Ways of Evaluation"></Subsection>
-              </MDBScrollspySection>
+                {/* Biased Decision Making */}
+                <div className="content-section">
+                  <h3>2 Ways of Evaluating Explainability</h3>
+                  <p>
+                    <b>
+                      Source:{" "}
+                      <a href="https://hfast.mie.utoronto.ca/wp-content/uploads/HCXAI2021_paper_25.pdf">
+                        Evaluating human understanding in XAI systems
+                      </a>
+                    </b>
+                  </p>
+                  <p>
+                    Quantitatively evaluating human understanding of XAI systems
+                    and the impact of explanations on human understanding is a
+                    current challenge in XAI research.
+                  </p>
+                  <p>
+                    Quantitative evaluations tend to fall into two main
+                    approaches:
+                  </p>
 
-              <MDBScrollspySection>
-                {/* XAI Definition */}
-                <Subsection title="Bias Interpretations"></Subsection>
-              </MDBScrollspySection>
-
-              <MDBScrollspySection>
-                {/* XAI Definition */}
-                <Subsection title=""></Subsection>
+                  <h5>1. Proxy Tasks</h5>
+                  <ul>
+                    <li>
+                      Proxy tasks are simplified tasks where human understanding
+                      is evaluated on the basis of successful prediction of the
+                      decision or the decision boundaries of the AI through the
+                      assistance of explanations.
+                    </li>
+                    <li>
+                      Proxy tasks are based on the idea of human understanding
+                      as the ability of users to simulate AI behavior.
+                    </li>
+                    <li>
+                      The first task is termed <b>forward simulation</b> and
+                      assesses human ability to predict an AI’s output given
+                      input data and an explanation of the AI’s behavior.
+                    </li>
+                    <li>
+                      The second task is termed counterfactual simulation and
+                      assesses human ability to use input data, an explanation,
+                      and an AI’s output to predict the AI’s output given a
+                      perturbation of the original input data.
+                    </li>
+                  </ul>
+                  <h5>2. Mental Models</h5>
+                  <ul>
+                    <li>
+                      Mental model tasks involve the elicitation and measurement
+                      of users’ mental models of an AI system, which can be
+                      defined as humans’ internal representations of the
+                      structure and function of a given system and can be
+                      elicited and analyzed in the context of evaluations of
+                      human XAI systems.
+                    </li>
+                    <li>
+                      Subjects’ mental models have been elicited both
+                      qualitatively (ex. through structured interviews) and
+                      quantitatively (ex. through comprehension scores)
+                    </li>
+                    <li>
+                      Non-expert humans’ mental models are likely to deviate
+                      from designers’ conceptual model of a system, and thus
+                      they could be incomplete or imprecise
+                    </li>
+                    <li>
+                      Mental models do not have to be accurate to serve their
+                      function, as long as they enable a level of understanding
+                      that allows humans to interact safely with an AI system
+                      (e.g., with the awareness that it can fail).
+                    </li>
+                  </ul>
+                </div>
               </MDBScrollspySection>
             </MDBScrollspySection>
           </MDBScrollspySection>
